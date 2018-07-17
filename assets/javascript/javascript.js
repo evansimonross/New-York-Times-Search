@@ -16,9 +16,12 @@ var displayData = function(data){
     var numberOfArticles = parseInt($('option:selected').val());
     $('#dataView').empty();
     for(var i = 0; i<numberOfArticles; i++){
-        $('#dataView').append('<h1>' + data.response.docs[i].headline.main + '</h1>');
-        $('#dataView').append('<p>' + data.response.docs[i].snippet + '</p>');
+        var card = $("<div>").addClass("card p-3 mt-3 shadow-sm")
 
+        card.append('<h3>' + data.response.docs[i].headline.main + '</h3>');
+        card.append('<p>' + data.response.docs[i].snippet + '</p>');
+
+        $("#dataView").append(card)
     }
 }
 
