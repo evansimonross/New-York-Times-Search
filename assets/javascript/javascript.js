@@ -12,7 +12,7 @@ var requestData = function (parameters) {
     });
 }
 
-$(document).on('#searchButton', click, function () {
+$(document).on('#searchButton', 'click', function () {
     var parameters = {};
     parameters['api-key'] = "120fdf09ee934a2284fa0841ab13f7b3";
     parameters.q = $('#searchInput').val();
