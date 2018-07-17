@@ -6,10 +6,20 @@ var requestData = function (parameters) {
         url: url,
         method: 'GET',
     }).done(function (result) {
-        console.log(result);
+        displayData(result);
     }).fail(function (err) {
         throw err;
     });
+}
+
+var displayData = function(data){
+    var numberOfArticles = parseInt($('option:selected').val());
+    $('#dataView').empty();
+    for(var i = 0; i<numberOfArticles; i++){
+        $('#dataView').append('<h1>' + data.response.docs[i].headline.main + '</h1>');
+        $('#dataView').append('<p>' + data.response.docs[i].snippet + '</p>');
+
+    }
 }
 
 $(document).on('click', '#searchButton', function () {
