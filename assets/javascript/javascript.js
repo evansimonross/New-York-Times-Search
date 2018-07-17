@@ -27,10 +27,10 @@ $(document).on('click', '#searchButton', function () {
     parameters['api-key'] = "120fdf09ee934a2284fa0841ab13f7b3";
     parameters.q = $('#searchInput').val();
     if ($('#startYear').val() != "") {
-        parameters.begin_date = $($('#startYear'));
+        parameters.begin_date = $('#startYear').val() + '0101';
     }
     if ($('#endYear').val() != "") {
-        parameters.end_date = $($('#endYear'));
+        parameters.end_date = $('#endYear').val() + '0101';
     }
     requestData(parameters);
 });
