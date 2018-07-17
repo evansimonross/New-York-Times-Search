@@ -1,3 +1,8 @@
 .header {
     text-align: center;
+    background: navy;
+}
+
+.footer {
+    text-align: center;
 }
